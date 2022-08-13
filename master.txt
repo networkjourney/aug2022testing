@@ -1,0 +1,15 @@
+conf t
+!
+hostname VATICANvirtuallink100
+!
+interface gi0/0
+ip address 47.47.47.2 255.255.255.0
+no shutdown
+!
+router ospf 100
+network 47.47.47.0 0.0.0.255 area 40
+area 40 virtual-link 1.1.1.1
+!
+end
+wr
+!
